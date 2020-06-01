@@ -108,7 +108,7 @@ if __name__ == '__main__':
     # 测试数据库连接问题
     dd_test = DataDict(conn_list)
     db_conn = dd_test.test_conn(conn_list)
-    while db_conn == False:
+    while not db_conn:
         conn_info = input(
             '请正确输入mysql数据库连接信息(格式为：主机IP,用户名,登录密码,数据库名)，逗号分隔且输入顺序不能乱，例如：192.168.0.1,root,root,test_db：')
         conn_list = conn_info.split(',')
